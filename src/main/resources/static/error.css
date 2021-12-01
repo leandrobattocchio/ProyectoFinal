@@ -1,0 +1,90 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-image:url(gatopensante.jpg);
+    background-position: center;  
+    background-size: cover;
+    height: 100vh;
+}
+body{
+    font-family: bahnschrift;
+}
+
+.BotonNav{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    background-color:#2F4F4E;
+    font-size: 20px;
+    border: none;
+    padding: 25px 32px;
+    text-decoration: none;
+}
+.BotonNav{
+    transition-duration: 0.4s;
+}
+.BotonNav:hover{
+    background-color:teal;
+}
+header{
+    background-color:#2F4F4E;
+    text-align: center;
+}
+
+
+
+#codigo{
+    width: 100%;
+    font-size: 100px;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: -4px 3px 0 rgb(26, 25, 25); 
+}
+
+#mensaje{
+    width: 100%;
+    font-size: 50px;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: -4px 3px 0 rgb(3, 3, 3); 
+}
+
+
+footer{
+    margin-top: 20%;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: url(logo.ico);
+    color: white;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 110px;
+}
+.FlexFoot{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin: 15px;
+}
+
+.BotonFoot{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin-left: 7%;
+    font-size: 30px;
+    margin-right: none;
+    width: 160px;
+}
+.BotonFoot:hover{
+    background-color:rgba(0, 0, 0, 0.267);
+}
+
+.FlexFoot >div{
+    margin-left: 5%;
+}
+
+
+
+

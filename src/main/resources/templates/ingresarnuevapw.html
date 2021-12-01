@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/restablecerPassword.css">
+    <meta name="viewport" content="widthw=device-width, initial-scale=1.0">
+    <title>Patitas - Restablecer contraseña</title>
+    <link rel="shortcut icon" href="/logo.ico">
+</head>
+
+<body>
+
+    <header th:replace="fragments/header::nav"></header>
+       
+    <main>
+        <h1 id ="error" th:if="${error}" th:text="${error}"></h1>
+        <h1>¡Ingrese su nueva contraseña!</h1>
+
+
+        <form action="/usuario/actualizar-password" method="POST">
+            <input type="hidden" name="idtoken" th:value="${idtoken}">
+            <label for="password1">Nueva contraseña:</label><br>
+            <input type="password" id="password1" name="clave1" placeholder="Contraseña...">
+            <br>
+            <label for="password2">Re-ingrese la contraseña:</label><br>
+            <input type="password" id="password2" name="clave2" placeholder="Contraseña...">
+            <br>
+            <button class="boton1" type="submit">Cambiar contraseña</button>
+        </form>
+
+
+    </main>
+
+    <footer th:replace="fragments/footer::footer"></footer>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+* {
+    font-size: 15px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+body {
+    background-image: url(registro.jpg);    
+    background-size: cover;
+}
+.BotonNav{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    background-color:#2F4F4E;
+    font-size: 20px;
+    border: none;
+    padding: 25px 32px;
+    text-decoration: none;
+}
+.BotonNav{
+    transition-duration: 0.4s;
+}
+.BotonNav:hover{
+    background-color:teal;
+}
+header{
+    background-color:#2F4F4E;
+    text-align: center;
+}
+
+
+.contenido {
+    background-color: rgba(0, 0, 0, 0.50);
+    margin-top: 10%;
+    justify-content: center;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    height: auto;
+    margin-left: 5%;
+    font-size: 30px;
+}
+
+.color-letra {
+    color: white;
+}
+
+.texto {
+    font-size: 20px;
+    color: white;
+}
+
+.texto2 {
+    font-size: 20px;
+    margin-left: 40px;
+    color: white;
+}
+
+.contenido-registro {
+    background-color: rgba(0, 0, 0, 0.50);
+    margin-left: 15%;
+    margin-top: 2%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.input {
+    width: 250px;
+    border-radius: 20px;
+    border: solid 1px black;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15px;
+    color: black;
+    height: 40px;
+}
+
+.option {
+    width: 250px;
+    border-radius: 20px;
+    border: solid 1px black;
+    font-size: 20px;
+    margin-top: 15px;
+    color: black;
+    height: 40px;
+    margin-left: 138px;
+    text-align: center;
+}
+
+.boton {
+    width: 200px;
+    border-radius: 20px;
+    height: 40px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+footer{
+    margin-top: 12%;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: url(logo.ico);
+    color: white;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 110px;
+}
+.FlexFoot{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin: 15px;
+}
+
+.BotonFoot{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin-left: 7%;
+    font-size: 30px;
+    margin-right: none;
+    width: 160px;
+}
+.BotonFoot:hover{
+    background-color:rgba(0, 0, 0, 0.267);
+}
+
+.FlexFoot >div{
+    margin-left: 5%;
+}
+
+
+
+.imagen {
+    align-items: flex-start;
+    margin-left: 0;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.foto1{
+  margin: 0%;
+  width: 50px;  
+}
+
+.distancia{
+ 
+  margin-top: 25px;  
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="/logo.ico">
+        <title>Patitas - Inicio</title>
+        <link rel="stylesheet" type="text/css" href="/index.css">
+    </head>
+
+    <body>
+        <header th:replace="fragments/header::nav"></header>
+        
+            <h1 th:if="${nuevapw}" th:text="${nuevapw}" style="text-decoration: none; font-size: 36px; font-family: bahnschrift; text-shadow: -4px 3px 0 black; color:#28C028"></h1>
+            <h1 th:if="${error}" th:text="${error}" style="text-decoration: none; font-size: 36px; font-family: bahnschrift; color: red"></h1>
+        
+        <div class="box">
+            
+            <h2>Bienvendido <span th:if="${session.usuariosession != null}"  th:text="${session.usuariosession.nombre + ' ' + session.usuariosession.apellido}"></span> a</h2>
+            <h1>PATITAS</h1>
+            <h3>Presentación de la página: patitaas es una página para la contactar a personas que buscan apostar un gatito y aquellas que tine uno para dar en adopcion!</h3>
+
+            <div class="Opciones">
+                <h4>Seleccione una opcion<span sec:authorize="hasRole('USER')"> de usuario</span><span sec:authorize="hasRole('ADMIN')"> de admin</span>:</h4>
+
+                <div class="Botonera"></div>
+                <button  th:if="${session.usuariosession == null}" class="botonera user" role="link" onclick="window.location='/login'">Iniciar sesión</button>
+                <button  th:if="${session.usuariosession == null}" class="botonera user" role="link" onclick="window.location='/registro'">Registrarse</button>
+                <button sec:authorize="hasRole('USER')" th:if="${session.usuariosession != null}" class="botonera user" role="link" onclick="window.location='/gato/editar-gato'">Dar en adopción</button>
+                <button sec:authorize="hasRole('USER')" th:if="${session.usuariosession != null}" class="botonera user" role="link" onclick="window.location='/gato/lista-gatos'">Adoptar un michi</button>
+                <button sec:authorize="hasRole('ADMIN')" th:if="${session.usuariosession != null}" class="botonera admin" role="link" onclick="window.location='/admin/lista-usuarios'">Lista de usuarios</button>
+                <button sec:authorize="hasRole('ADMIN')" th:if="${session.usuariosession != null}" class="botonera admin" role="link" onclick="window.location='/admin/lista-gatitos'">Lista de gatitos</button>
+
+
+            </div>
+        </div>
+        <footer th:replace="fragments/footer::footer"></footer>
+
+    </body>

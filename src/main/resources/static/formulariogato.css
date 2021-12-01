@@ -1,0 +1,184 @@
+body{
+    background-image: url(fondo.PNG);
+    margin: 0%;
+    padding: 0%;
+    background-position: center;  
+    background-size: cover;
+    height: 100vh;
+    font-family: bahnschrift;
+}
+
+
+
+.BotonNav{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    background-color:#2F4F4E;
+    font-size: 20px;
+    border: none;
+    padding: 25px 32px;
+    text-decoration: none;
+}
+.BotonNav{
+    transition-duration: 0.4s;
+}
+.BotonNav:hover{
+    background-color:teal;
+}
+header{
+    background-color:#2F4F4E;
+    text-align: center;
+}
+
+
+
+h1{
+    font-family: bahnschrift;
+    color: whitesmoke; 
+    margin: 0%;
+    text-align: center;
+    text-shadow: -4px 3px 0 black; 
+    font-size: 90px;
+}
+
+
+.error{
+    font-family: bahnschrift;
+    color: red; 
+    margin: 0%;
+    text-align: center;
+    text-shadow: -4px 3px 0 black; 
+    font-size: 50px;
+}
+
+.Box{
+    background-color: rgba(0, 0, 0, 0.41);
+    margin-top: 0%;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 6%;;
+    text-align: center;
+    color: white;
+    height: 533 px;
+    font-size: 16px;
+    text-shadow: -2px 2px 0 black; 
+}
+label{
+    margin-top:600px;
+}
+input[type=text], select{
+    height: 25px;
+    width: 180px;
+    border-radius: 9%;
+    padding: 0%;
+    resize: none;
+
+}
+input[type=text]:focus {
+    border: 3px solid #555;
+    width: 28%;
+    resize: none;
+}
+
+.aceptar{
+
+    font-family: bahnschrift;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 45px;
+    background-color:seagreen;
+    border: none;
+    color: white;
+    font-size: 130%;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+}
+
+.volver{
+
+    font-family: bahnschrift;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 45px;
+    background-color:white;
+    border: none;
+    color: black;
+    font-size: 130%;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+}
+
+.eliminar{
+    margin-top: 25px;
+    font-family: bahnschrift;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 45px;
+    background-color:red;
+    border: none;
+    color: white;
+    font-size: 130%;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+}
+.Aceptar:hover{
+    background-color:teal;
+}
+
+
+
+footer{
+    margin-top: 1%;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: url(Logo.png);
+    color: white;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 110px;
+}
+.FlexFoot{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin: 15px;
+}
+
+.BotonFoot{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin-left: 7%;
+    font-size: 30px;
+    margin-right: none;
+    width: 160px;
+}
+.BotonFoot:hover{
+    background-color:rgba(0, 0, 0, 0.267);
+}
+
+.FlexFoot >div{
+    margin-left: 5%;
+}
+
+input[type=textarea]{
+
+    height: 55px;
+    width: 255px;
+    border-radius: 9%;
+    padding: 0%;
+    resize: none;
+}
+
+.distancia{
+    margin-top:   30px;
+    margin-bottom: 30px;
+}
+
+#foto{
+    
+   margin-left: 15px; 
+}

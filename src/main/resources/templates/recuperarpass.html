@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="/enviarEmail.css">
+        <meta name="viewport" content="widthw=device-width, initial-scale=1.0">
+        <title>Recuperar contraseña</title>
+        <link rel="shortcut icon" href="/logo.ico">
+    </head>
+
+    <body>
+
+        <header th:replace="fragments/header::nav"></header>
+
+
+        <main>
+            <h1>Recuperación de la cuenta</h1>
+
+            <h1 th:if="${exito}" th:text="${exito}" ></h1>
+            <h1 th:if="${error}" th:text="${error}" ></h1>
+            <form action="/usuario/email-de-recuperacion" method="POST">
+                <label for="email">Ingresar e-mail:</label><br>
+                <input type="email" id="email" name="email" placeholder="E-mail...">
+                <br>
+                <button class="boton1" type="submite">Enviar correo de recuperación</button>
+            </form>
+        </main>
+
+        <footer th:replace="fragments/footer::footer"></footer>
+
+
+    </body>
+
+</html>

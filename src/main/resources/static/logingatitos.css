@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("login.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.BotonNav{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    background-color:#2F4F4E;
+    font-size: 20px;
+    border: none;
+    padding: 25px 32px;
+    text-decoration: none;
+}
+.BotonNav{
+    transition-duration: 0.4s;
+}
+.BotonNav:hover{
+    background-color:teal;
+}
+header{
+    background-color:#2F4F4E;
+    text-align: center;
+} 
+.box {
+    margin-bottom: 10%;
+    width: 300px;
+    margin-top: -6%;
+    padding: 40px;
+    margin-left: 50%;
+    transform: translate(-50%, 45%);
+    background: rgba(27, 22, 22, 0.8);
+    text-align: center;
+    box-shadow: 10px 9px 5px black;
+    border-radius: 15px;
+}
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background-color: white;
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.15s;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    width: 280px;
+    border-color: #53cc2e;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #ffffff;
+    padding: 14px 40px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+    background: #22ac10;
+}
+a,
+a:link {
+    color: #fff;
+    text-decoration: none;
+    padding: 3px;
+}
+
+footer{
+    margin-top: 12%;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: url(logo.ico);
+    color: white;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 110px;
+}
+.FlexFoot{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin: 15px;
+}
+
+.BotonFoot{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin-left: 7%;
+    font-size: 30px;
+    margin-right: none;
+    width: 160px;
+}
+.BotonFoot:hover{
+    background-color:rgba(0, 0, 0, 0.267);
+}
+
+.FlexFoot >div{
+    margin-left: 5%;
+}
+
+#error{
+    text-align: center;   
+    color: red;
+}
+
+#logout{
+    text-align: center;   
+    color: green;
+}
+
+#logueado{
+    margin-top: 15%;
+    text-align: center;
+    font-size: 60px;
+}
+
+
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/logo.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="/registro.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+        <title>Registro</title>
+
+    </head>
+
+    <body>
+
+        <header th:replace="fragments/header::nav"></header>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-6  col-sm-3 contenido color-letra">Bienvenidxs A <br>
+                    <h1>ADOPCIONES PATITAS</h1><br>
+                    <p  class="texto" style="font-size: 23px">
+                        ¡Nos alegra mucho verte por nuestra pagina web! Aqui podras ver a muchos gatitos que están buscando un nuevo hogar, o incluso tratarle de buscar un nuevo hogar a algún gatito tuyo. ¡Esperamos que pases un buen rato y que disfrutes mucho!
+                    </p>
+                   
+                   <div class="foto1">
+                    <img  th:if="${session.usuariosession == null}" class="img-fluid"  style="min-width: 250px; min-height: 250px; max-width: 250px; max-height: 250px; margin-left: 60px; margin-bottom: 19px; margin-top: 11px;" src="/gatosaludando.png" title="Imagen de bienvenida" alt="Gatito saludando">  
+                    <img  class="img-fluid " style="min-width: 250px; min-height: 250px; max-width: 250px; max-height: 250px; margin-left: 60px; margin-bottom: 19px; margin-top: 11px;" th:if="${perfil.foto != null && perfil.id != null}" th:src="${'/foto/usuario/' + perfil.id}" title="Usuario de nuestro sitio web" alt="Usuario de nuestro sitio web">
+                    <img  class="img-fluid " style="min-width: 250px; min-height: 250px; max-width: 250px; max-height: 250px; margin-left: 60px; margin-bottom: 19px; margin-top: 11px;" th:if="${perfil.foto == null && perfil.id != null}" src="/avatardefaultusuario.png" title="Usuario de nuestro sitio web" alt="Usuario de nuestro sitio web"> 
+      
+                   </div> 
+                </div>
+
+                <div class="col-6 col-sm-5 contenido-registro">
+                    <form class="box" enctype="multipart/form-data">
+                        <input type="hidden" name="id" th:value="${perfil.id}">
+                        <br>
+                        <h1 th:text="${accion}" style="color: white;"></h1>
+                        <h2 id="error" th:if="${error}"  th:text="${error}" style="font-size: 20px; color: red"></h2><br>
+
+                        <input type="text" name="nombre" placeholder="Nombre" maxlength="20" th:value="${perfil.nombre}" class="input"><br> 
+                        <input type="text" name="apellido" placeholder="Apellido" maxlength="20" th:value="${perfil.apellido}" class="input"><br>
+                        <input type="number" name="edad" id="edad" placeholder="Edad" maxlength="3" th:value="${perfil.edad}" class="input"><br>
+                        <input type="text" name="username" placeholder="Nombre de usuario" th:value="${perfil.username}" maxlength="20" class="input"><br>
+
+                        <select name="sexo" class="form-select option"> 
+                            <option th:each="sexo : ${sexos}" th:value="${sexo}" th:text="${sexo}" th:selected="${perfil.sexo != null && sexo == perfil.sexo}"></option>
+                        </select>
+
+                        <input type="text" name="numero" placeholder="(Código de área) Número" th:value="${perfil.numero}" class="input"><br>
+                       <div class="btseleccionar">
+                        <input type="file" name="archivo" class="input" accept="image/png, .jpeg, .jpg, image/gif"><br>
+                        <input type="text" name="email" placeholder="E-Mail" th:value="${perfil.email}" class="input" ><br>
+                       </div> 
+                       
+                        <select name="idLocalidad" class="form-select option" aria-label="Default select example"> 
+                            <option th:each="localidad : ${localidades}" th:value="${localidad.id}" th:text="${localidad.nombre}" th:selected="${perfil.localidad != null && localidad == perfil.localidad}"></option>
+                        </select>
+
+                        <input type="password" name="clave1" placeholder="Contraseña" class="input"><br>
+                        <input type="password" name="clave2" placeholder="Repetir Contraseña" class="input"><br>
+
+                        <input th:if="${session.usuariosession != null}" formaction="/usuario/actualizar-perfil" formmethod="POST" type="submit" value="Actualizar" class="btn btn-success boton">
+                        <input th:if="${session.usuariosession != null}" formaction="/" formmethod="GET" type="submit" value="Volver" class="btn btn-primary boton">
+                        <input th:if="${session.usuariosession == null}" formaction="/registrar" formmethod="POST" type="submit" value="Registar" class="btn btn-success boton">
+                        <input th:if="${session.usuariosession == null}" type="reset" value="Limpiar" class="btn btn-primary boton">
+                        <br><br>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="fragments/footer::footer"></footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    </body>
+
+
+</html>

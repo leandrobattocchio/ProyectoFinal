@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/logo.ico">
+        <link rel="stylesheet" type="text/css" href="/formulariogato.css">
+        
+        <title>Vista administracion - Modificacion de perfil de gato</title>
+    </head>
+    <body>
+
+        <header th:replace="fragments/header::nav"></header>
+
+        <h1 class="error" th:text="${error}" th:if="${error}"></h1>
+   
+        
+        <div>  
+            <form enctype="multipart/form-data" th:object="${gato}" >    
+               
+                <div class="Box" style="margin-top: 25px; margin-bottom: 35px; height: 770px">
+
+              
+                    <img  class="img-fluid " style="max-height: 155px; min-height: 155px;" th:if="${gato.fotoPrincipal != null && gato.id != null}" th:src="${'/foto/gato/' + gato.id}" title="Michi lindo de patitas" alt="Un michi hermoso">
+                    <img  class="img-fluid " style="max-height: 155px; min-height: 155px;" th:if="${gato.fotoPrincipal == null && gato.id != null}" src="/avatardefault.jpg" title="Michi lindo de patitas" alt="Un michi hermoso"> 
+                        
+                 
+                    <input type="hidden" th:field="*{id}">
+
+                    <div class="distancia">
+                        <label for="nombre">Nombre</label><br>
+                        <input type="text" id="nombre" th:field="*{nombre}">
+                        <br>
+                    </div> 
+
+                    <div class="distancia">
+                        <label for="edad">Edad</label><br>
+                        <input type="text" id="edad" th:field="*{edad}">
+                        <br>
+                    </div> 
+
+                    <div class="distancia">
+                        <label>Sexo</label><br>
+                        <select th:field="*{sexo}"> 
+                            <option th:each="sexo : ${sexos}" th:value="${sexo}" th:text="${sexo}" th:selected="${gato.sexo != null && sexo == gato.sexo}"></option>
+                        </select>
+                        <br>
+                    </div> 
+
+                    <div class="distancia">
+                        <label>Raza</label><br>
+                        <select th:field="*{raza}"> 
+                            <option th:each="raza : ${razas}" th:value="${raza}" th:text="${raza}" th:selected="${gato.raza != null && raza == gato.raza}"></option>
+                        </select>
+                        <br>
+                    </div>
+
+                    <div class="distancia">
+                        <label for="descripcion">Descripcion</label><br>
+                        <input type="textarea" id="descripcion" th:value="${gato.descripcion}" name="descripcion">
+                        <br>
+                    </div> 
+
+                    <div class="distancia">
+                        <label>Borrar foto</label><br>
+                        <label for="Mujer" class="uno">Si</label>
+                        <input type="radio" id="Mujer" name="borrar" value="si" required="true">
+
+                        <label for="hombre" class="uno">No</label>
+                        <input type="radio" id="Hombre" name="borrar" value="no" required="true">
+                        <br>
+                    </div> 
+                    
+                    <button formaction="/admin/modificar-perfil-gato" formmethod="POST" type="submit" class="gato" style="display: block; margin:auto; text-align: center; border: 2px solid #ffffff; padding: 14px 40px; width: 200px; outline: none; color: black; border-radius: 24px; transition: 0.25s; cursor: pointer;">Modificar michi</button>
+                 </div>
+            </form>
+        </div>   
+        <footer th:replace="fragments/footer::footer"></footer>
+
+    </body>
+</html>

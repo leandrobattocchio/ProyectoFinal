@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="/logo.ico">
+        <title>Bandeja de mensajes</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/mensaje.css">
+    </head>
+
+    <body>
+
+        <header th:replace="fragments/header::nav"></header>
+
+        <h1 id="titulo" th:text="'Bandeja de mensajes de '+${session.usuariosession.nombre}+' '+${session.usuariosession.apellido}"></h1>
+        <h1 class="mensaje">Mensajes recibidos</h1>
+        <div class="tabla">
+            <table class="table table-dark table-hover ">
+                <thead>
+                <th>Emisor</th>
+                <th>Asunto</th>
+                <th>Fecha</th>
+                <th>Visto</th>
+                <th>Acciones</th>
+                </thead>
+                <tbody> 
+                    <tr th:if="${mensajesrecibidos != null && !mensajesrecibidos.isEmpty()}" class="table-active" th:each="mensaje : ${mensajesrecibidos}">
+                        <td th:text="${mensaje.usuarioEmisor.nombre}+' '+${mensaje.usuarioEmisor.apellido}"></td>
+                        <td th:text="${mensaje.asunto}"></td>
+                        <td th:text="${mensaje.creado}"></td>
+                        <td th:text="${mensaje.visto == true} ? 'Si' : 'No' "></td>
+                        <td><a th:href="@{/mensaje/ver(id=__${mensaje.id}__,responder=si)}" class="btn btn-light btn-outline-dark">Ver mensaje</a></td>
+                    </tr>
+                    <tr th:if="${mensajesrecibidos == null || mensajesrecibidos.isEmpty()}">
+                        <td colspan="5" th:text="'Todavia no tienes ningún mensaje recibido para mostrar'"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+        <h1 class="mensaje">Mensajes enviados</h1>
+        <div class="tabla">
+            <table class="table table-dark table-hover">
+                <thead>
+                <th>Receptor</th>
+                <th>Asunto</th>
+                <th>Fecha</th>
+                <th>Visto</th>
+                <th>Acciones</th>
+                </thead>
+                <tbody>
+                    <tr th:if="${mensajesenviados != null && !mensajesenviados.isEmpty()}" class="table-active" th:each="mensaje : ${mensajesenviados}">
+                        <td th:text="${mensaje.usuarioReceptor.nombre}+' '+${mensaje.usuarioReceptor.apellido}"></td>
+                        <td th:text="${mensaje.asunto}"></td>
+                        <td th:text="${mensaje.creado}"></td>
+                        <td th:text="${mensaje.visto == true} ? 'Si' : 'No' "></td>
+                        <td><a th:href="@{/mensaje/ver(id=__${mensaje.id}__)}" class="btn btn-light btn-outline-dark">Ver mensaje</a></td>
+                    </tr>
+                     <tr th:if="${mensajesenviados == null || mensajesenviados.isEmpty()}">
+                        <td colspan="5" th:text="'Todavia no tienes ningún mensaje enviado para mostrar'"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a th:href="@{/}" class="btn btn-light btn-outline-dark" style="padding: 16px; margin-left: 10%; margin-top: -230px">Volver al inicio</a>
+
+        <footer th:replace="fragments/footer::footer"></footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    </body>

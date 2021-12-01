@@ -1,0 +1,152 @@
+body{
+    background-image: url(Fondoperfilgato.jpg);
+    margin: 0%;
+    padding: 0%;
+    background-position: center;  
+    background-size: cover;
+    height: 100vh;
+    font-family: bahnschrift;
+}
+
+
+.BotonNav{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    background-color:#2F4F4E;
+    font-size: 20px;
+    border: none;
+    padding: 25px 32px;
+    text-decoration: none;
+}
+.BotonNav{
+    transition-duration: 0.4s;
+}
+.BotonNav:hover{
+    background-color:teal;
+}
+header{
+    background-color:#2F4F4E;
+    text-align: center;
+}
+
+
+h1{
+    font-family: bahnschrift;
+    color: whitesmoke; 
+    margin: 0%;
+    margin-top: 30px;
+    text-align: center;
+    text-shadow: -4px 3px 0 black; 
+    font-size: 90px;}
+
+
+.Cuadro{
+    background-color: rgba(0, 0, 0, 0.41);
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10%;
+    text-align: center;
+    display: flex;
+    color: whitesmoke;
+    font-size: 20px;
+}
+.Foto{
+    margin-left: 10px;
+    margin-top: 7%;
+}
+.Info{
+    margin-left: 25%;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    text-align: left;
+}
+
+
+.f1{
+    height: 13px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5%;
+    margin-bottom: 40px;
+    background-color:white;
+    transition-duration: 0.4s;
+}
+.f1:hover{
+        background-color:seagreen
+}
+
+.Gato{
+    width: 250;
+    height: 250;
+    border-radius: 8%;
+    height: 350px;
+    width: 480px;
+    background-position: center;  
+}
+
+
+.Adoptar{
+    margin-left:39%;
+    margin-top: 15px;
+    font-family: bahnschrift;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 45px;
+    background-color: #2F4F4E;
+    border: none;
+    color: white;
+    font-size: 130%;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+}
+.Adoptar:hover{
+    background-color:teal;
+}
+
+
+
+footer{
+    margin-top: 12%;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: url(logo.ico);
+    color: white;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 110px;
+}
+.FlexFoot{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin: 15px;
+}
+
+.BotonFoot{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin-left: 7%;
+    font-size: 30px;
+    margin-right: none;
+    width: 160px;
+}
+.BotonFoot:hover{
+    background-color:rgba(0, 0, 0, 0.267);
+}
+
+.FlexFoot >div{
+    margin-left: 5%;
+}
+
+
+#textarea{
+  font-size: 20px;
+  width: 300px;
+  height: 200px;
+  margin-bottom: 10%;
+}
+

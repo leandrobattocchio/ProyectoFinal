@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("misgatitos.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.BotonNav{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    background-color:#2F4F4E;
+    font-size: 20px;
+    border: none;
+    padding: 25px 32px;
+    text-decoration: none;
+}
+.BotonNav{
+    transition-duration: 0.4s;
+}
+.BotonNav:hover{
+    background-color:teal;
+}
+header{
+    background-color:#2F4F4E;
+    text-align: center;
+    margin-bottom: 8%;
+} 
+
+
+footer{
+    margin-top: 12%;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: url(logo.ico);
+    color: white;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 110px;
+}
+.FlexFoot{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin: 15px;
+}
+
+.BotonFoot{
+    font-family: bahnschrift;
+    color: whitesmoke;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.021);
+    margin-left: 7%;
+    font-size: 30px;
+    margin-right: none;
+    width: 160px;
+}
+.BotonFoot:hover{
+    background-color:rgba(0, 0, 0, 0.267);
+}
+
+.FlexFoot >div{
+    margin-left: 5%;
+}
+
+.tabla{
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.mensaje{
+    text-shadow: -4px 3px 0 black; 
+    font-family: bahnschrift;
+    text-align: center;
+    font-size: 50px;
+    color:#ffffff ;
+}
+
+#titulo{
+    text-shadow: -4px 3px 0 black; 
+    font-family: bahnschrift;
+    font-size: 70px;
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    color: rgb(251, 251, 251);
+    text-align: center;
+}
+
+#crear{
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    color: rgb(251, 251, 251);
+    text-align: center;
+}
+
+#formtext{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+label{
+    font-size: 20px;
+    color: white;
+}
+
+#exampleFormControlTextarea1{
+
+    height: 500px;
+}
+
+.texto{
+ 
+  margin-top:60%;
+  margin-bottom: 60%;
+  font-size: 22px;
+}
+
+#tabla{
+   margin-left:  40px;
+   margin-right: 40px;
+    
+}
+

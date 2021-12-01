@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/logo.ico">
+    <link rel="stylesheet" type="text/css" href="/perfilgato.css">
+    <title>Patitas</title>
+</head>
+<body>
+    <header th:replace="fragments/header::nav"></header>
+
+    <h1 th:text="'Perfil de '+${gato.nombre}"></h1>
+
+
+    <div class="Cuadro">
+        
+        <div class="Foto" style="margin-right: -32px">          
+            <img  class="img-fluid " style="max-height: 300px; min-height: 300px; max-width: 330px; min-width: 330px; margin-left: 40px;" th:if="${gato.fotoPrincipal != null && gato.id != null}" th:src="${'/foto/gato/' + gato.id}" title="Michi lindo de patitas" alt="Un michi hermoso">
+            <img  class="img-fluid " style="max-height: 300px; min-height: 300px; max-width: 330px; min-width: 330px; margin-left: 40px;" th:if="${gato.fotoPrincipal == null && gato.id != null}" src="/avatardefault.jpg" title="Michi lindo de patitas" alt="Un michi hermoso"> 
+        </div>
+        
+        
+        <div class="Info">
+          <div style="margin-bottom: 15px;"> 
+            <b style="color: white; text-shadow: -4px 3px 0 black; font-size: 24px;">Nombre: </b><span th:text="${gato.nombre}"></span><br>
+          </div>   
+           <div style="margin-bottom: 15px;"> 
+            <b style="color: white; text-shadow: -4px 3px 0 black; font-size: 24px;">Raza: </b><span th:text="${gato.raza}"></span><br>
+          </div>   
+          <div style="margin-bottom: 15px;"> 
+            <b style="color: white; text-shadow: -4px 3px 0 black; font-size: 24px;">Edad: </b><span th:text="${gato.edad}"></span><br>
+          </div> 
+          <div style="margin-bottom: 15px;"> 
+            <b style="color: white; text-shadow: -4px 3px 0 black; font-size: 24px;">Localidad: </b><span th:text="'Localidad: '+${gato.usuario.localidad.nombre}"></span><br>
+          </div> 
+          <div style="margin-bottom: 15px;"> 
+              <b style="color: white; text-shadow: -4px 3px 0 black; font-size: 24px;">Descripcion:</b><br>
+          </div>
+          
+            <textarea id ="textarea" th:text="${gato.descripcion}" th:disabled="${session.usuariosession != null}"></textarea>
+        </div>
+      
+    </div>   
+
+    <a th:href="@{/usuario/ver-perfil(id=__${gato.usuario.id}__)}" class="Adoptar">¡Contactar con el dueño!</a>  
+
+    <footer th:replace="fragments/footer::footer"></footer>
+</body>
+</html>

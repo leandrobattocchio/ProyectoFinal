@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+            <link rel="shortcut icon" href="/logo.ico">
+                <title>Lista de gatos</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                    <link rel="stylesheet" type="text/css" href="/misgatitos.css">
+    </head>
+
+    <body>
+        <header th:replace="fragments/header::nav"></header>
+
+      
+         <h1 class="mensaje">Lista de gatitos registrados</h1>
+       <div id="tabla">
+         <table class="table table-hover table-dark">
+  
+             <thead>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Sexo</th>
+                <th>Raza</th>
+                <th>Edad</th>
+                <th>Fecha registro</th>
+                <th>Fecha adopcion</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <tr  th:if="${gatos != null && !gatos.isEmpty()}" th:each="gato : ${gatos}">
+                    <td>
+                       <img class="img-fluid " style="max-height: 70px; min-height: 70px; max-width: 80px; min-width: 80px;" th:if="${gato.fotoPrincipal != null}" th:src="${'/foto/gato/' + gato.id}" title="Michi lindo de patitas" alt="Un michi hermoso">
+                       <img class="img-fluid " style="max-height: 70px; min-height: 70px; max-width: 80px; min-width: 80px;" th:if="${gato.fotoPrincipal == null}" src="/avatardefault.jpg" title="Michi lindo de patitas" alt="Un michi hermoso"> 
+                    </td>       
+                    <td th:text="${gato.nombre}"></td>
+                    <td th:text="${gato.sexo}"></td>
+                    <td th:text="${gato.raza}"></td>
+                    <td th:text="${gato.edad}"></td>
+                    <td th:text="${gato.creado}"></td>
+                    <td  th:if="${gato.adoptado != null}" th:text="${gato.adoptado}"></td>
+                    <td  th:if="${gato.adoptado == null}" th:text="'No adoptado'"></td>
+                    <td>
+                        <a th:if="${gato.baja == null && gato.adoptado == null}" th:href="@{/admin/gatito-adoptado(idGato=__${gato.id}__)}"  class="btn btn-success">¡Adoptado!</a>
+                        <a th:if="${gato.baja == null && gato.adoptado != null}" th:href="@{/admin/gatito-desadoptado(idGato=__${gato.id}__)}"  class="btn btn-success">¡Desadoptar!</a>
+                        <a th:if="${gato.baja == null && gato.adoptado == null}" th:href="@{/admin/editar-perfil-gato(idGato=__${gato.id}__)}" class="btn btn-light">Editar</a>
+                        <a th:if="${gato.baja == null}" th:href="@{/admin/deshabilitar-gato(idGato=__${gato.id}__)}" class="btn btn-danger">Deshabilitar</a>  
+                        <a th:if="${gato.baja != null}" th:href="@{/admin/habilitar-gato(idGato=__${gato.id}__)}" class="btn btn-success">Habilitar</a>   
+                    </td>    
+                </tr>    
+                <tr>
+                    <td th:if="${gatos == null || gatos.isEmpty()}" colspan="10" > No hay ningún gato para mostrar</td>
+                </tr>
+            </tbody>  
+         </table>
+       </div>  
+        <a th:href="@{/}" class="btn btn-light btn-outline-dark" style="margin-left: 2.5%; padding: 15px">Volver al inicio</a>
+        <footer th:replace="fragments/footer::footer"></footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+    </body>

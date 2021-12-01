@@ -1,0 +1,11 @@
+ <header th:fragment="nav" >
+    <nav> 
+        <button class="BotonNav" role="link" onclick="window.location='/'">INICIO</button>
+        <button th:if="${session.usuariosession == null}" class="BotonNav" role="link" onclick="window.location='/registro'">REGISTRO</button>
+        <button class="BotonNav" role="link" onclick="window.open('https://www.instagram.com/gatitos_para_adoptar/')" formtarget="_blank">CONTACTO</button>
+        <button class="BotonNav" th:if="${session.usuariosession != null}" role="link"><a class="BotonNav" th:href="@{/usuario/editar-perfil}+'?id='+${session.usuariosession.id}">MI PERFIL</a></button>
+        <button class="BotonNav" th:if="${session.usuariosession != null}" role="link"><a class="BotonNav" th:href="@{/mensaje/bandeja-mensajes}+'?idusuario='+${session.usuariosession.id}">BUZON DE MENSAJES</a></button>
+        <button class="BotonNav" th:if="${session.usuariosession != null}" role="link" onclick="window.location='/gato/mis-gatos'"><a class="BotonNav" sec:authorize="hasRole('USER')">MIS GATITOS</a></button>
+        <button class="BotonNav" th:if="${session.usuariosession != null}" role="link" onclick="window.location='/logout'">SALIR</button>
+    </nav> 
+</header>

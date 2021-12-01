@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="/logo.ico">
+        <title>Inicio de sesión</title>
+        <link rel="stylesheet" type="text/css" href="/logingatitos.css">
+    </head>
+
+    <body>
+        <header th:replace="fragments/header::nav"></header>
+
+        <h1 th:if="${session.usuariosession != null}" id="logueado">¡Ya se encuentra logueado!</h1>
+        
+        <form th:if="${session.usuariosession == null}" class="box" action="/logincheck" method="POST">
+            <h2 id="error" th:if="${error}"  th:text="${error}"></h2>
+            <h2 id="logout" th:if="${logout}" th:text="${logout}" ></h2>
+            <h1>Iniciar Sesion</h1>
+            <input type="text" name="username" placeholder="Usuario o E-Mail" th:disabled="${session.usuariosession != null}" >
+            <input type="Password" name="password" placeholder="Contraseña" th:disabled="${session.usuariosession != null}">
+
+            <a href="/usuario/recuperar-password">¿Olvidó su contraseña?</a>
+            <input type="submit" name="Login" value="Entrar">
+
+            <a href="/registro"><u>¿No estás Registrado?</u></a>
+
+        </form>
+
+        <footer th:replace="fragments/footer::footer"></footer>
+
+    </body>
